@@ -1,0 +1,24 @@
+{
+    "presets": [
+        [
+            "env", {
+                "modules": false,
+                "useBuiltIns": true,
+                "loose": true,
+                "targets": {
+                    "node": "current"
+                }
+            }
+        ], "react"
+    ],
+    "env": {
+        "test": {
+            "presets": [
+                "react"
+            ],
+            "plugins": [
+                "transform-es2015-modules-commonjs"
+            ]
+        }
+    }
+}

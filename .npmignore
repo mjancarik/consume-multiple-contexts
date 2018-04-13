@@ -1,0 +1,10 @@
+/src
+.babelrc
+.eslintrc.js
+.gitignore
+.npmignore
+.prettierignore
+ReactSixteenAdapter.js
+README.md
+rollup.config.js
+setupJest.js

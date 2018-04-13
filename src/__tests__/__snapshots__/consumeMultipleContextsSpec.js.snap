@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`consume-multiple-contexts createMultipleContexts method should create multiple contexts factory 1`] = `
+<App
+  Component={[Function]}
+  theme="dark"
+>
+  <Web>
+    <Profile
+      theme="dark"
+    >
+      <div>
+        dark
+        , 
+      </div>
+    </Profile>
+  </Web>
+</App>
+`;
+
+exports[`consume-multiple-contexts createMultipleContexts method should create multiple contexts factory 2`] = `
+<App
+  Component={[Function]}
+  theme="red"
+  user={
+    Object {
+      "name": "anonymous",
+    }
+  }
+>
+  <Web>
+    <Profile
+      theme="red"
+      user={
+        Object {
+          "name": "anonymous",
+        }
+      }
+    >
+      <div>
+        red
+        , 
+        anonymous
+      </div>
+    </Profile>
+  </Web>
+</App>
+`;
+
+exports[`consume-multiple-contexts createMultipleContexts method should create multiple contexts factory 2 1`] = `
+<Web>
+  <Other
+    theme="light"
+    user={
+      Object {
+        "name": "profile",
+      }
+    }
+  >
+    <span>
+      light
+      , 
+      profile
+    </span>
+  </Other>
+</Web>
+`;
+
+exports[`consume-multiple-contexts createNamedContext method should return right structure 1`] = `
+Object {
+  "Consumer": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": [Circular],
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_calculateChangedBits": null,
+    "_changedBits": 0,
+    "_currentRenderer": null,
+    "_currentValue": "light",
+    "_defaultValue": "light",
+  },
+  "name": "theme",
+}
+`;
+
+exports[`consume-multiple-contexts withMultipleContext HOC should pass context to props 1`] = `
+<App
+  Component={[Function]}
+  theme="dark"
+  user={
+    Object {
+      "name": "anonymous",
+    }
+  }
+>
+  <MultipleContexts>
+    <Profile
+      theme="dark"
+      user={
+        Object {
+          "name": "anonymous",
+        }
+      }
+    >
+      <div>
+        dark
+        , 
+        anonymous
+      </div>
+    </Profile>
+  </MultipleContexts>
+</App>
+`;

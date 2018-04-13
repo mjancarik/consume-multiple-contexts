@@ -1,0 +1,88 @@
+{
+    "name": "consume-multiple-contexts",
+    "version": "0.0.1",
+    "description": "Helper for consuming multiple contexts",
+    "main": "lib/consumeMultipleContexts.js",
+    "module": "es/consumeMultipleContexts.js",
+    "scripts": {
+        "preversion": "npm test && npm run lint && npm run build",
+        "postversion": "npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
+        "lint": "node_modules/.bin/eslint -c ./.eslintrc.js --fix './**/*.{js,jsx}' --ignore-path ./.prettierignore",
+        "test": "node_modules/.bin/jest --no-watchman",
+        "build:commonjs": "cross-env NODE_ENV=cjs rollup -c -o lib/consumeMultipleContexts.js",
+        "build:es": "cross-env NODE_ENV=es rollup -c -o es/consumeMultipleContexts.js",
+        "build": "npm run build:commonjs && npm run build:es"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mjancarik/consume-multiple-contexts.git"
+    },
+    "keywords": [
+        "React",
+        "Context",
+        "Multiple Contexts"
+    ],
+    "author": "Miroslav Jancarik",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mjancarik/consume-multiple-contexts/issues"
+    },
+    "homepage": "https://github.com/mjancarik/consume-multiple-contexts#readme",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-eslint": "^8.2.2",
+        "babel-jest": "^22.4.3",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-react": "^6.24.1",
+        "cross-env": "^5.1.4",
+        "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1",
+        "enzyme-to-json": "^3.3.3",
+        "eslint": "^4.19.1",
+        "eslint-config-last": "^0.0.5",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-jasmine": "^2.9.3",
+        "eslint-plugin-jest": "^21.15.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-plugin-react": "^7.7.0",
+        "jest": "^22.4.3",
+        "jsdom": "^11.7.0",
+        "prettier": "^1.11.1",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "rollup": "^0.57.1",
+        "rollup-plugin-babel": "^3.0.3",
+        "rollup-plugin-commonjs": "^9.1.0",
+        "rollup-plugin-node-resolve": "^3.3.0",
+        "rollup-plugin-uglify": "^3.0.0"
+    },
+    "jest": {
+        "bail": false,
+        "verbose": true,
+        "testEnvironment": "node",
+        "setupFiles": [
+            "<rootDir>/setupJest.js"
+        ],
+        "modulePaths": [
+            "<rootDir>/"
+        ],
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ],
+        "testRegex": "(/__tests__/.*|(\\.|/)(Spec))\\.jsx?$"
+    },
+    "dependencies": {
+        "hoist-non-react-statics": "^2.5.0"
+    },
+    "peerDependencies": {
+        "react": ">=16.3.0"
+    },
+    "browserify": {
+        "transform": [
+            "babelify"
+        ]
+    }
+}

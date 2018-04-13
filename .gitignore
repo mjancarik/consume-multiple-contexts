@@ -1,0 +1,9 @@
+.idea/
+.history/
+.vscode/
+.DS_Store
+node_modules/
+dist/
+es/
+lib/
+package-lock.json
