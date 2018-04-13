@@ -1,6 +1,6 @@
 {
     "name": "consume-multiple-contexts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Helper for consuming multiple contexts",
     "main": "lib/consumeMultipleContexts.js",
     "module": "es/consumeMultipleContexts.js",
