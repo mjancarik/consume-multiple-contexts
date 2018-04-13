@@ -87,6 +87,9 @@ const renderWithContext = createMultipleContexts(
     createNamedContext(UserContext, 'user')
 );
 
+.
+.
+
 function Content() {
   return renderWithContext(({ theme, user }) => (
     <ProfilePage theme={theme} user={user} />
@@ -113,7 +116,6 @@ const multipleContexts = [
   createNamedContext(UserContext, 'user')
 ];
 
-.
 .
 .
 

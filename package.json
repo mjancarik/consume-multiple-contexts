@@ -1,7 +1,7 @@
 {
     "name": "consume-multiple-contexts",
     "version": "0.0.2",
-    "description": "Helper for consuming multiple contexts",
+    "description": "Utility for consuming multiple contexts",
     "main": "lib/consumeMultipleContexts.js",
     "module": "es/consumeMultipleContexts.js",
     "scripts": {
@@ -20,12 +20,16 @@
     "keywords": [
         "React",
         "Context",
-        "Multiple Contexts"
+        "Multiple Contexts",
+        "Utility"
     ],
     "author": "Miroslav Jancarik",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/mjancarik/consume-multiple-contexts/issues"
+    },
+    "publishConfig": {
+        "registry": "http://registry.npmjs.org/"
     },
     "homepage": "https://github.com/mjancarik/consume-multiple-contexts#readme",
     "devDependencies": {
