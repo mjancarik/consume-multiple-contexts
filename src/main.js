@@ -41,17 +41,13 @@ export function createMultipleContexts(...rest) {
 }
 
 function generateConsumer(namedContext, context, componentTreeFactory) {
-  return function $__$() {
+  return function consumerFactory() {
     return (
       <namedContext.Consumer>
         {value => {
           context[namedContext.name] = value;
 
-          if (typeof componentTreeFactory === 'function') {
-            return componentTreeFactory();
-          } else {
-            return componentTreeFactory;
-          }
+          return componentTreeFactory();
         }}
       </namedContext.Consumer>
     );

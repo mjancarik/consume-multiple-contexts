@@ -1,5 +1,9 @@
 # consume-multiple-contexts
 
+[![Build Status](https://travis-ci.org/mjancarik/consume-multiple-contexts.svg?branch=master)](https://travis-ci.org/mjancarik/consume-multiple-contexts) [![dependencies Status](https://david-dm.org/mjancarik/consume-multiple-contexts/status.svg)](https://david-dm.org/mjancarik/consume-multiple-contexts)
+[![Coverage Status](https://coveralls.io/repos/github/mjancarik/consume-multiple-contexts/badge.svg?branch=master)](https://coveralls.io/github/mjancarik/consume-multiple-contexts?branch=master)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 Utility for consuming multiple react contexts.
 
 ## Why?

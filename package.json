@@ -41,6 +41,7 @@
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-env": "^1.6.1",
         "babel-preset-react": "^6.24.1",
+        "coveralls": "^3.0.0",
         "cross-env": "^5.1.4",
         "enzyme": "^3.3.0",
         "enzyme-adapter-react-16": "^1.1.1",
@@ -67,6 +68,16 @@
         "bail": false,
         "verbose": true,
         "testEnvironment": "node",
+        "coverageThreshold": {
+            "global": {
+                "functions": 70,
+                "lines": 70,
+                "statements": 70
+            }
+        },
+        "collectCoverageFrom": [
+            "<rootDir>/src/**/*.{js,jsx}"
+        ],
         "setupFiles": [
             "<rootDir>/setupJest.js"
         ],

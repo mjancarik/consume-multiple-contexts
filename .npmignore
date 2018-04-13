@@ -4,6 +4,7 @@
 .gitignore
 .npmignore
 .prettierignore
+.travis.yml
 ReactSixteenAdapter.js
 README.md
 rollup.config.js

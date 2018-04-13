@@ -6,4 +6,5 @@ node_modules/
 dist/
 es/
 lib/
+coverage/
 package-lock.json
