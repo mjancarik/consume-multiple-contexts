@@ -8,7 +8,7 @@
 Utility for consuming multiple react contexts.
 
 ## Why?
-It's common to have multiple contexts in React ecosystems and you need consuming them together in your components. In new context API is way for that but you must repeat consumers for every component. It's maybe good for few component but for large applications is pain. The module consume-multiple-contexts try to solve that.
+It's common to have multiple contexts in React ecosystems and you need consuming them together in your components. In new context API is way for that but you must repeat consumers for every component. It's maybe good for few component but for large applications is pain. The module consume-multiple-contexts try to solve that problem.
 
 ## Installation
 

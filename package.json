@@ -1,7 +1,7 @@
 {
     "name": "consume-multiple-contexts",
     "version": "0.0.2",
-    "description": "Utility for consuming multiple contexts",
+    "description": "Utility for consuming multiple contexts with DRY",
     "main": "lib/consumeMultipleContexts.js",
     "module": "es/consumeMultipleContexts.js",
     "scripts": {
@@ -21,7 +21,10 @@
         "React",
         "Context",
         "Multiple Contexts",
-        "Utility"
+        "Utility",
+        "Compose",
+        "Multiple",
+        "HOC"
     ],
     "author": "Miroslav Jancarik",
     "license": "ISC",
