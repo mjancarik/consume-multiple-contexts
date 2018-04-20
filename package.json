@@ -19,10 +19,12 @@
     },
     "keywords": [
         "React",
+        "React16",
         "Context",
         "Multiple Contexts",
         "Utility",
         "Compose",
+        "Compose multiple contexts",
         "Multiple",
         "HOC"
     ],
