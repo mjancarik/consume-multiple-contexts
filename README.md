@@ -5,7 +5,7 @@
 ![GitHub package version](https://img.shields.io/github/package-json/v/mjancarik/consume-multiple-contexts.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-Utility for consuming multiple react contexts.
+Utility for consuming multiple react contexts. Look at the  [example](https://codesandbox.io/s/7wwn58rxl0).
 
 ## Why?
 It's common to have multiple contexts in React ecosystems and you need consuming them together in your components. In new context API is way for that but you must repeat consumers for every component. It's maybe good for few component but for large applications is pain. The module consume-multiple-contexts try to solve that problem.
