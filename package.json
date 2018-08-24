@@ -1,6 +1,6 @@
 {
     "name": "consume-multiple-contexts",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Utility for consuming multiple contexts with DRY",
     "main": "lib/consumeMultipleContexts.js",
     "module": "es/consumeMultipleContexts.js",
