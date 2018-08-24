@@ -19,8 +19,8 @@ export function withMultipleContext(...rest) {
   };
 }
 
-export function createNamedContext({ Consumer }, name) {
-  return { Consumer, name };
+export function createNamedContext(name, { Consumer }) {
+  return { name, Consumer };
 }
 
 export function createMultipleContexts(...rest) {

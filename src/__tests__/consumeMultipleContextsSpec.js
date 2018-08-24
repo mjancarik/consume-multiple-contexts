@@ -46,7 +46,7 @@ class App extends React.Component {
 describe('consume-multiple-contexts', () => {
   describe('createNamedContext method', () => {
     it('should return right structure', () => {
-      expect(createNamedContext(ThemeContext, 'theme')).toMatchSnapshot();
+      expect(createNamedContext('theme', ThemeContext)).toMatchSnapshot();
     });
   });
 
@@ -55,8 +55,8 @@ describe('consume-multiple-contexts', () => {
 
     beforeAll(() => {
       multipleContexts = createMultipleContexts(
-        createNamedContext(ThemeContext, 'theme'),
-        createNamedContext(UserContext, 'user')
+        createNamedContext('theme', ThemeContext),
+        createNamedContext('user', UserContext)
       );
     });
 
@@ -88,8 +88,8 @@ describe('consume-multiple-contexts', () => {
   describe('withMultipleContext HOC', () => {
     it('should pass context to props', () => {
       const Component = withMultipleContext(
-        createNamedContext(ThemeContext, 'theme'),
-        createNamedContext(UserContext, 'user')
+        createNamedContext('theme', ThemeContext),
+        createNamedContext('user', UserContext)
       )(Profile);
 
       const wrapper = mount(

@@ -88,8 +88,8 @@ const ThemeContext = React.createContext('light');
 const UserContext = React.createContext();
 
 const renderWithContext = createMultipleContexts(
-    createNamedContext(ThemeContext, 'theme'),
-    createNamedContext(UserContext, 'user')
+    createNamedContext('theme', ThemeContext),
+    createNamedContext('user', UserContext)
 );
 
 .
@@ -117,8 +117,8 @@ const ThemeContext = React.createContext('light');
 const UserContext = React.createContext();
 
 const multipleContexts = [
-  createNamedContext(ThemeContext, 'theme'),
-  createNamedContext(UserContext, 'user')
+  createNamedContext('theme', ThemeContext),
+  createNamedContext('user', UserContext)
 ];
 
 .
