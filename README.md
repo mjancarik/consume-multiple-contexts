@@ -87,7 +87,7 @@ import { createNamedContext, createMultipleContexts } from 'consume-multiple-con
 const ThemeContext = React.createContext('light');
 const UserContext = React.createContext();
 
-const renderWithContext = createMultipleContexts(
+const withContext = createMultipleContexts(
     createNamedContext('theme', ThemeContext),
     createNamedContext('user', UserContext)
 );
@@ -96,13 +96,13 @@ const renderWithContext = createMultipleContexts(
 .
 
 function Content() {
-  return renderWithContext(({ theme, user }) => (
+  return withContext(({ theme, user }) => (
     <ProfilePage theme={theme} user={user} />
   ));
 }
 
 function Sidebar() {
-  return renderWithContext(({ theme, user }) => (
+  return withContext(({ theme, user }) => (
     <ProfileSidebar theme={theme} user={user} />
   ));
 }
@@ -111,7 +111,7 @@ function Sidebar() {
 Or if you like HOC you can write:
 
 ```javascript
-import { createNamedContext, withMultipleContext } from 'consume-multiple-contexts';
+import { createNamedContext, withMultipleContextsFactory } from 'consume-multiple-contexts';
 
 const ThemeContext = React.createContext('light');
 const UserContext = React.createContext();
@@ -120,11 +120,12 @@ const multipleContexts = [
   createNamedContext('theme', ThemeContext),
   createNamedContext('user', UserContext)
 ];
+const withContext = withMultipleContextsFactory(themeContext, userContext);
 
 .
 .
 
-const Content = withMultipleContext(...multipleContexts)(ProfilePage);
-const Sidebar = withMultipleContext(...multipleContexts)(ProfileSidebar);
+const Content = withContext(ProfilePage);
+const Sidebar = withContext(ProfileSidebar);
 
 ```

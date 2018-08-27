@@ -1,21 +1,27 @@
 import React from 'react';
 import hoistNonReactStatic from 'hoist-non-react-statics';
 
-export function withMultipleContext(...rest) {
-  const multipleContexts = createMultipleContexts(...rest);
+export function withMultipleContextsFactory(...rest) {
+  const withContext = createMultipleContexts(...rest);
 
   return Component => {
-    class MultipleContexts extends React.PureComponent {
-      render() {
-        return multipleContexts(context => (
+    class ComponentWithMultipleContexts extends React.Component {
+      constructor(...rest) {
+        super(...rest);
+
+        this._renderComponent = context => (
           <Component {...context} {...this.props} />
-        ));
+        );
+      }
+
+      render() {
+        return withContext(this._renderComponent);
       }
     }
 
-    hoistNonReactStatic(MultipleContexts, Component);
+    hoistNonReactStatic(ComponentWithMultipleContexts, Component);
 
-    return MultipleContexts;
+    return ComponentWithMultipleContexts;
   };
 }
 
@@ -26,9 +32,9 @@ export function createNamedContext(name, { Consumer }) {
 export function createMultipleContexts(...rest) {
   let namedContexts = rest.reverse();
 
-  return renderProps => {
+  return renderComponent => {
     let context = {};
-    let callbackWithContext = () => renderProps(context);
+    let callbackWithContext = () => renderComponent(context);
 
     let consumerTree = namedContexts.reduce(
       (componentTreeFactory, namedContext) =>
@@ -40,7 +46,7 @@ export function createMultipleContexts(...rest) {
   };
 }
 
-function generateConsumer(namedContext, context, componentTreeFactory) {
+export function generateConsumer(namedContext, context, componentTreeFactory) {
   return function consumerFactory() {
     return (
       <namedContext.Consumer>

@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import {
   createMultipleContexts,
   createNamedContext,
-  withMultipleContext
+  withMultipleContextsFactory
 } from '../main';
 
 const ThemeContext = React.createContext('light');
@@ -51,10 +51,10 @@ describe('consume-multiple-contexts', () => {
   });
 
   describe('createMultipleContexts method', () => {
-    let multipleContexts = null;
+    let withContext = null;
 
     beforeAll(() => {
-      multipleContexts = createMultipleContexts(
+      withContext = createMultipleContexts(
         createNamedContext('theme', ThemeContext),
         createNamedContext('user', UserContext)
       );
@@ -62,7 +62,7 @@ describe('consume-multiple-contexts', () => {
 
     it('should create multiple contexts factory', () => {
       function Web() {
-        return multipleContexts(({ theme, user }) => (
+        return withContext(({ theme, user }) => (
           <Profile theme={theme} user={user} />
         ));
       }
@@ -76,7 +76,7 @@ describe('consume-multiple-contexts', () => {
 
     it('should create multiple contexts factory 2', () => {
       function Web() {
-        return multipleContexts(({ theme, user }) => (
+        return withContext(({ theme, user }) => (
           <Other theme={theme} user={user} />
         ));
       }
@@ -85,9 +85,9 @@ describe('consume-multiple-contexts', () => {
     });
   });
 
-  describe('withMultipleContext HOC', () => {
+  describe('withMultipleContextsFactory HOC', () => {
     it('should pass context to props', () => {
-      const Component = withMultipleContext(
+      const Component = withMultipleContextsFactory(
         createNamedContext('theme', ThemeContext),
         createNamedContext('user', UserContext)
       )(Profile);
