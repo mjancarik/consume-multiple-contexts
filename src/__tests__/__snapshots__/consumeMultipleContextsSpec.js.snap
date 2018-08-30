@@ -88,7 +88,7 @@ Object {
 }
 `;
 
-exports[`consume-multiple-contexts withMultipleContextsFactory HOC should pass context to props 1`] = `
+exports[`consume-multiple-contexts withMultipleContextsFactory HOC should pass context to props for React.Component 1`] = `
 <App
   Component={[Function]}
   theme="dark"
@@ -113,6 +113,35 @@ exports[`consume-multiple-contexts withMultipleContextsFactory HOC should pass c
         anonymous
       </div>
     </Profile>
+  </ComponentWithMultipleContexts>
+</App>
+`;
+
+exports[`consume-multiple-contexts withMultipleContextsFactory HOC should pass context to props for pure function 1`] = `
+<App
+  Component={[Function]}
+  theme="dark"
+  user={
+    Object {
+      "name": "anonymous",
+    }
+  }
+>
+  <ComponentWithMultipleContexts>
+    <pure
+      theme="dark"
+      user={
+        Object {
+          "name": "anonymous",
+        }
+      }
+    >
+      <i>
+        dark
+        , 
+        anonymous
+      </i>
+    </pure>
   </ComponentWithMultipleContexts>
 </App>
 `;

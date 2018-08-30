@@ -29,6 +29,14 @@ class Other extends React.Component {
   }
 }
 
+function pure(props) {
+  return (
+      <i>
+      {props.theme}, {props.user && props.user.name}
+     </i>
+ );
+}
+
 class App extends React.Component {
   render() {
     const { user, theme, Component } = this.props;
@@ -86,7 +94,7 @@ describe('consume-multiple-contexts', () => {
   });
 
   describe('withMultipleContextsFactory HOC', () => {
-    it('should pass context to props', () => {
+    it('should pass context to props for React.Component', () => {
       const Component = withMultipleContextsFactory(
         createNamedContext('theme', ThemeContext),
         createNamedContext('user', UserContext)
@@ -97,6 +105,19 @@ describe('consume-multiple-contexts', () => {
       );
 
       expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should pass context to props for pure function', () => {
+        const Component = withMultipleContextsFactory(
+          createNamedContext('theme', ThemeContext),
+          createNamedContext('user', UserContext)
+      )(pure);
+
+        const wrapper = mount(
+          <App theme="dark" user={{ name: 'anonymous' }} Component={Component} />
+        );
+
+        expect(wrapper).toMatchSnapshot();
     });
   });
 });
